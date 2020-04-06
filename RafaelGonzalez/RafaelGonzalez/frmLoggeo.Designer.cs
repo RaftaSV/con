@@ -46,6 +46,7 @@
             this.lblUsuario.Size = new System.Drawing.Size(71, 20);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
             // lblContraseña
             // 
@@ -55,6 +56,7 @@
             this.lblContraseña.Size = new System.Drawing.Size(102, 20);
             this.lblContraseña.TabIndex = 1;
             this.lblContraseña.Text = "Contraseña";
+            this.lblContraseña.Click += new System.EventHandler(this.lblContraseña_Click);
             // 
             // txtUsuario
             // 
@@ -62,6 +64,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(167, 26);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtContraseña
             // 
@@ -69,6 +72,7 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(167, 26);
             this.txtContraseña.TabIndex = 3;
+            this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
             // 
             // pictureBox1
             // 
@@ -79,6 +83,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnEntrar
             // 

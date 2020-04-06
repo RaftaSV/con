@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RafaelGonzalez.Model;
+using RafaelGonzalez.Vista;
 
 namespace RafaelGonzalez
 {
@@ -31,8 +32,6 @@ namespace RafaelGonzalez
                 {
                     frmControl f = new frmControl();
                     f.ShowDialog();
-                    this.Hide();
-
 
                 }
                 else
@@ -42,6 +41,31 @@ namespace RafaelGonzalez
                 }
 
             }
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblContraseña_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
 
         }
     }

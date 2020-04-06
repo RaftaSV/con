@@ -38,6 +38,8 @@ namespace RafaelGonzalez
 
         private void frmControl_Load(object sender, EventArgs e)
         {
+            MostrarPanel(new frmEstudiantes());
+           
 
         }
 
@@ -47,7 +49,7 @@ namespace RafaelGonzalez
 
         }
 
-        private void estudiantesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        public void estudiantesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             MostrarPanel(new frmEstudiantes());
 
@@ -69,7 +71,11 @@ namespace RafaelGonzalez
             {
                 Application.Exit();
             }
+        }
 
+        private void notasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MostrarPanel(new frmNotas());
         }
     }
 }

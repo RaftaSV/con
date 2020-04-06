@@ -54,7 +54,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(274, 45);
+            this.menuStrip1.Size = new System.Drawing.Size(394, 45);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "Menu";
             // 
@@ -77,6 +77,7 @@
             this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
             this.notasToolStripMenuItem.Size = new System.Drawing.Size(65, 39);
             this.notasToolStripMenuItem.Text = "Notas";
+            this.notasToolStripMenuItem.Click += new System.EventHandler(this.notasToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -100,7 +101,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.Black;
-            this.btnCerrar.Location = new System.Drawing.Point(809, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(809, 8);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(105, 31);
             this.btnCerrar.TabIndex = 5;
@@ -128,6 +129,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmControl";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmControl";
             this.Load += new System.EventHandler(this.frmControl_Load);
@@ -140,13 +142,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem estudiantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel pnlPrincipal;
+        public System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

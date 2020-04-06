@@ -30,7 +30,7 @@ namespace RafaelGonzalez.Vista
             using (controlNotasEntities db = new controlNotasEntities())
             {
                 var lista = from es in db.estudiantes
-                            select new { es.id_Estudiante, es.nombre, es.apellido, es.usuario, es.contraseña };
+                            select new {ID = es.id_Estudiante, Nombres= es.nombre,Apellidos= es.apellido,Usuario= es.usuario,Contraseña= es.contraseña };
 
                 dgvEstudiantes.DataSource = lista.ToList();
                 
@@ -67,7 +67,7 @@ namespace RafaelGonzalez.Vista
 
         }
 
-        private void dgvEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvEstudiantes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             string nombre = dgvEstudiantes.CurrentRow.Cells[1].Value.ToString();
             string apellido = dgvEstudiantes.CurrentRow.Cells[2].Value.ToString();
@@ -159,5 +159,7 @@ namespace RafaelGonzalez.Vista
             btnGuardar.Enabled = false;
 
         }
+
+       
     }
 }

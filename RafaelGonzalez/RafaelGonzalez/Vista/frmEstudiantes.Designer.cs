@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
@@ -40,21 +40,9 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvEstudiantes
-            // 
-            this.dgvEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEstudiantes.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvEstudiantes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEstudiantes.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvEstudiantes.Location = new System.Drawing.Point(1, 146);
-            this.dgvEstudiantes.Name = "dgvEstudiantes";
-            this.dgvEstudiantes.Size = new System.Drawing.Size(913, 285);
-            this.dgvEstudiantes.TabIndex = 0;
-            this.dgvEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellContentClick);
             // 
             // txtUsuario
             // 
@@ -150,12 +138,35 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // dgvEstudiantes
+            // 
+            this.dgvEstudiantes.AllowUserToAddRows = false;
+            this.dgvEstudiantes.AllowUserToDeleteRows = false;
+            this.dgvEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEstudiantes.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstudiantes.Location = new System.Drawing.Point(3, 147);
+            this.dgvEstudiantes.Name = "dgvEstudiantes";
+            this.dgvEstudiantes.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstudiantes.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEstudiantes.Size = new System.Drawing.Size(910, 291);
+            this.dgvEstudiantes.TabIndex = 14;
+            this.dgvEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellContentClick_1);
+            // 
             // frmEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(917, 442);
+            this.Controls.Add(this.dgvEstudiantes);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
@@ -167,7 +178,6 @@
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.dgvEstudiantes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -182,8 +192,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvEstudiantes;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtNombres;
@@ -195,5 +203,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridView dgvEstudiantes;
     }
 }
