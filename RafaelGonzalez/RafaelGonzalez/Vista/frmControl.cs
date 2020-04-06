@@ -34,35 +34,42 @@ namespace RafaelGonzalez
             Panel.Show();
         }
 
-        private void estudiantesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MostrarPanel(new frmEstudiantes());
-        }
-
-        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MostrarPanel(new frmMaterias());
-        }
+       
 
         private void frmControl_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-           result = MessageBox.Show("¿Desea cerrar el programa?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-           
+
+        }
+
+        private void estudiantesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MostrarPanel(new frmEstudiantes());
+
+
+        }
+
+        private void materiasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MostrarPanel(new frmMaterias());
+
+        }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            result = MessageBox.Show("¿Desea cerrar el programa?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
 
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
             }
+
         }
     }
 }

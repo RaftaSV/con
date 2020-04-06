@@ -39,7 +39,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(614, 107);
+            this.btnEliminar.Location = new System.Drawing.Point(660, 107);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 36);
             this.btnEliminar.TabIndex = 17;
@@ -49,7 +49,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(348, 107);
+            this.btnEditar.Location = new System.Drawing.Point(394, 107);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(111, 36);
             this.btnEditar.TabIndex = 16;
@@ -59,7 +59,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(54, 107);
+            this.btnGuardar.Location = new System.Drawing.Point(100, 107);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(111, 36);
             this.btnGuardar.TabIndex = 15;
@@ -69,17 +69,23 @@
             // 
             // dgvMaterias
             // 
+            this.dgvMaterias.AllowUserToAddRows = false;
+            this.dgvMaterias.AllowUserToDeleteRows = false;
             this.dgvMaterias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMaterias.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvMaterias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvMaterias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterias.Location = new System.Drawing.Point(3, 162);
             this.dgvMaterias.Name = "dgvMaterias";
-            this.dgvMaterias.Size = new System.Drawing.Size(786, 257);
+            this.dgvMaterias.ReadOnly = true;
+            this.dgvMaterias.Size = new System.Drawing.Size(914, 329);
             this.dgvMaterias.TabIndex = 14;
             this.dgvMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellContentClick);
             // 
             // txtMateria
             // 
-            this.txtMateria.Location = new System.Drawing.Point(54, 49);
+            this.txtMateria.Location = new System.Drawing.Point(100, 49);
             this.txtMateria.Name = "txtMateria";
             this.txtMateria.Size = new System.Drawing.Size(322, 26);
             this.txtMateria.TabIndex = 18;
@@ -87,7 +93,7 @@
             // lblMateria
             // 
             this.lblMateria.AutoSize = true;
-            this.lblMateria.Location = new System.Drawing.Point(171, 26);
+            this.lblMateria.Location = new System.Drawing.Point(217, 26);
             this.lblMateria.Name = "lblMateria";
             this.lblMateria.Size = new System.Drawing.Size(62, 20);
             this.lblMateria.TabIndex = 19;
@@ -97,7 +103,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 420);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(917, 491);
             this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.txtMateria);
             this.Controls.Add(this.btnEliminar);
@@ -105,6 +112,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgvMaterias);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMaterias";
             this.Text = "frmMaterias";

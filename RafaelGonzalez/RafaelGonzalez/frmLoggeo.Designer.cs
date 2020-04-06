@@ -41,7 +41,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(130, 132);
+            this.lblUsuario.Location = new System.Drawing.Point(130, 151);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(71, 20);
             this.lblUsuario.TabIndex = 0;
@@ -50,7 +50,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(116, 220);
+            this.lblContraseña.Location = new System.Drawing.Point(116, 236);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(102, 20);
             this.lblContraseña.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(82, 169);
+            this.txtUsuario.Location = new System.Drawing.Point(82, 189);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(167, 26);
             this.txtUsuario.TabIndex = 2;
@@ -73,7 +73,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(96, -12);
+            this.pictureBox1.Location = new System.Drawing.Point(96, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(153, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -82,12 +82,17 @@
             // 
             // btnEntrar
             // 
+            this.btnEntrar.BackColor = System.Drawing.Color.Turquoise;
+            this.btnEntrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEntrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Location = new System.Drawing.Point(96, 331);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(135, 43);
             this.btnEntrar.TabIndex = 5;
             this.btnEntrar.Text = "Entrar";
-            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // frmLoggeo
@@ -95,7 +100,7 @@
             this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(336, 407);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.pictureBox1);
@@ -107,7 +112,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLoggeo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Control";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

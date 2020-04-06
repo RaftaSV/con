@@ -122,7 +122,7 @@ namespace RafaelGonzalez.Vista
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            result = MessageBox.Show("¿Desea eliminar este registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            result = MessageBox.Show("¿Desea eliminar este registro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (result == DialogResult.Yes)
             {
                 using (controlNotasEntities db = new controlNotasEntities())

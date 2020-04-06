@@ -32,14 +32,19 @@
             this.estudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.estudiantesToolStripMenuItem,
             this.materiasToolStripMenuItem,
@@ -48,36 +53,42 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(830, 31);
-            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(274, 45);
+            this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "Menu";
             // 
             // estudiantesToolStripMenuItem
             // 
             this.estudiantesToolStripMenuItem.Name = "estudiantesToolStripMenuItem";
-            this.estudiantesToolStripMenuItem.Size = new System.Drawing.Size(105, 25);
+            this.estudiantesToolStripMenuItem.Size = new System.Drawing.Size(105, 39);
             this.estudiantesToolStripMenuItem.Text = "Estudiantes";
-            this.estudiantesToolStripMenuItem.Click += new System.EventHandler(this.estudiantesToolStripMenuItem_Click);
+            this.estudiantesToolStripMenuItem.Click += new System.EventHandler(this.estudiantesToolStripMenuItem_Click_1);
             // 
             // materiasToolStripMenuItem
             // 
             this.materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
-            this.materiasToolStripMenuItem.Size = new System.Drawing.Size(85, 25);
+            this.materiasToolStripMenuItem.Size = new System.Drawing.Size(85, 39);
             this.materiasToolStripMenuItem.Text = "Materias";
-            this.materiasToolStripMenuItem.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click);
+            this.materiasToolStripMenuItem.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click_1);
             // 
             // notasToolStripMenuItem
             // 
             this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
-            this.notasToolStripMenuItem.Size = new System.Drawing.Size(65, 25);
+            this.notasToolStripMenuItem.Size = new System.Drawing.Size(65, 39);
             this.notasToolStripMenuItem.Text = "Notas";
             // 
-            // pnlPrincipal
+            // panel1
             // 
-            this.pnlPrincipal.Location = new System.Drawing.Point(12, 43);
-            this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(805, 481);
-            this.pnlPrincipal.TabIndex = 1;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Controls.Add(this.menuStrip1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(917, 45);
+            this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnCerrar
             // 
@@ -89,26 +100,32 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.Black;
-            this.btnCerrar.Location = new System.Drawing.Point(725, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(809, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(105, 31);
-            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
+            // 
+            // pnlPrincipal
+            // 
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPrincipal.Location = new System.Drawing.Point(0, 45);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(917, 491);
+            this.pnlPrincipal.TabIndex = 8;
             // 
             // frmControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 522);
-            this.Controls.Add(this.btnCerrar);
+            this.ClientSize = new System.Drawing.Size(917, 536);
             this.Controls.Add(this.pnlPrincipal);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Maroon;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmControl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -116,8 +133,9 @@
             this.Load += new System.EventHandler(this.frmControl_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -127,7 +145,8 @@
         private System.Windows.Forms.ToolStripMenuItem estudiantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
-        private System.Windows.Forms.Panel pnlPrincipal;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Panel pnlPrincipal;
     }
 }
