@@ -18,11 +18,9 @@ namespace RafaelGonzalez
             InitializeComponent();
         }
 
-        private void añadirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
         private Form activeForm = null;
+        private DialogResult result;
+
         public void MostrarPanel(Form Panel)
         {
             if (activeForm != null) activeForm.Close();
@@ -44,6 +42,27 @@ namespace RafaelGonzalez
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MostrarPanel(new frmMaterias());
+        }
+
+        private void frmControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+           result = MessageBox.Show("¿Desea cerrar el programa?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+           
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

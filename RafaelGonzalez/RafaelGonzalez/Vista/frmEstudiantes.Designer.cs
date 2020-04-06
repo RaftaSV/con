@@ -111,7 +111,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(661, 21);
+            this.lblContraseña.Location = new System.Drawing.Point(649, 21);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(102, 20);
             this.lblContraseña.TabIndex = 10;
@@ -119,7 +119,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(31, 107);
+            this.btnGuardar.Location = new System.Drawing.Point(52, 107);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(111, 36);
             this.btnGuardar.TabIndex = 11;
@@ -129,17 +129,17 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(205, 107);
+            this.btnEditar.Location = new System.Drawing.Point(346, 107);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(111, 36);
             this.btnEditar.TabIndex = 12;
-            this.btnEditar.Text = "Editar";
+            this.btnEditar.Text = "Actualizar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(391, 107);
+            this.btnEliminar.Location = new System.Drawing.Point(612, 107);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 36);
             this.btnEliminar.TabIndex = 13;

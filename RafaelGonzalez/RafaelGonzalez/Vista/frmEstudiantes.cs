@@ -18,9 +18,11 @@ namespace RafaelGonzalez.Vista
             InitializeComponent();
         }
         estudiantes est = new estudiantes();
+        DialogResult result;
         private void frmEstudiantes_Load(object sender, EventArgs e)
         {
             cargardatos();
+            desactivarEditar();
 
         }
         public void cargardatos()
@@ -76,47 +78,85 @@ namespace RafaelGonzalez.Vista
             txtApellidos.Text = apellido;
             txtUsuario.Text = usuario;
             txtContraseña.Text = contra;
-            btnGuardar.Enabled = false;
-            
+            desactivarGuardar();
 
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
+
         {
-            if(txtUsuario.Text=="") { } else {
+            result = MessageBox.Show("¿Desea guardar los cambios?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+
+            if (result == DialogResult.Yes)
+            {
+
+
+                if (txtUsuario.Text == "") { }
+                else
+                {
+                    using (controlNotasEntities db = new controlNotasEntities())
+                    {
+                        string id = dgvEstudiantes.CurrentRow.Cells[0].Value.ToString();
+                        int ID = int.Parse(id);
+                        est = db.estudiantes.Where(verificarId => verificarId.id_Estudiante == ID).First();
+                        est.nombre = txtNombres.Text;
+                        est.apellido = txtApellidos.Text;
+                        est.usuario = txtUsuario.Text;
+                        est.contraseña = txtContraseña.Text;
+                        db.Entry(est).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                        cargardatos();
+                        limpiar();
+                        desactivarEditar();
+                    }
+
+                }
+            }
+            else
+            {
+                cargardatos();
+                limpiar();
+                desactivarEditar();
+            }
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            result = MessageBox.Show("¿Desea eliminar este registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (result == DialogResult.Yes)
+            {
                 using (controlNotasEntities db = new controlNotasEntities())
                 {
                     string id = dgvEstudiantes.CurrentRow.Cells[0].Value.ToString();
                     int ID = int.Parse(id);
-                    est = db.estudiantes.Where(verificarId => verificarId.id_Estudiante == ID).First();
-                    est.nombre = txtNombres.Text;
-                    est.apellido = txtApellidos.Text;
-                    est.usuario = txtUsuario.Text;
-                    est.contraseña = txtContraseña.Text;
-                    db.Entry(est).State = System.Data.Entity.EntityState.Modified;
+                    est = db.estudiantes.Find(ID);
+                    db.estudiantes.Remove(est);
                     db.SaveChanges();
                     cargardatos();
                     limpiar();
-                    btnGuardar.Enabled = true;
+                    desactivarEditar();
                 }
-
+            }
+            else
+            {
+                cargardatos();
+                limpiar();
+                desactivarEditar();
             }
 
         }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
+        public void desactivarEditar()
         {
-            using (controlNotasEntities db = new controlNotasEntities())
-            {
-                string id = dgvEstudiantes.CurrentRow.Cells[0].Value.ToString();
-                int ID = int.Parse(id);
-                est = db.estudiantes.Find(ID);
-                db.estudiantes.Remove(est);
-                db.SaveChanges();
-                cargardatos();
-                limpiar();
-                btnGuardar.Enabled = true;
-            }
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = true;
+        }
+
+        public void desactivarGuardar()
+        {
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnGuardar.Enabled = false;
 
         }
     }

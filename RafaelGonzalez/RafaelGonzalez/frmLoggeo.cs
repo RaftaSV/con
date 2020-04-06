@@ -31,6 +31,8 @@ namespace RafaelGonzalez
                 {
                     frmControl f = new frmControl();
                     f.ShowDialog();
+                    this.Hide();
+
 
                 }
                 else
