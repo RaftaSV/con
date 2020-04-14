@@ -34,7 +34,6 @@
             this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +56,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(394, 45);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "Menu";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // estudiantesToolStripMenuItem
             // 
@@ -109,24 +109,16 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
-            // pnlPrincipal
-            // 
-            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPrincipal.Location = new System.Drawing.Point(0, 45);
-            this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(917, 491);
-            this.pnlPrincipal.TabIndex = 8;
-            // 
             // frmControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 536);
-            this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Maroon;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmControl";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -147,7 +139,6 @@
         private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Panel pnlPrincipal;
         public System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

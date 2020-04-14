@@ -18,29 +18,15 @@ namespace RafaelGonzalez
             InitializeComponent();
         }
 
-        private Form activeForm = null;
+      
         private DialogResult result;
 
-        public void MostrarPanel(Form Panel)
-        {
-            if (activeForm != null) activeForm.Close();
-            activeForm = Panel;
-            Panel.TopLevel = false;
-            Panel.FormBorderStyle = FormBorderStyle.None;
-            Panel.Dock = DockStyle.Fill;
-            pnlPrincipal.Controls.Add(Panel);
-            pnlPrincipal.Tag = Panel;
-            Panel.BringToFront();
-            Panel.Show();
-        }
-
-       
 
         private void frmControl_Load(object sender, EventArgs e)
         {
-            MostrarPanel(new frmEstudiantes());
-           
-
+            frmEstudiantes f = new frmEstudiantes();
+            f.MdiParent = this;
+            f.Show();
         }
 
 
@@ -51,14 +37,21 @@ namespace RafaelGonzalez
 
         public void estudiantesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            MostrarPanel(new frmEstudiantes());
+            cerrarfrm();
+            frmEstudiantes f = new frmEstudiantes();
+            f.MdiParent = this;
+            f.Show();
 
 
         }
 
         private void materiasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            MostrarPanel(new frmMaterias());
+            cerrarfrm();
+            frmMaterias f = new frmMaterias();
+            f.MdiParent = this;
+            f.Show();
+
 
         }
 
@@ -75,7 +68,25 @@ namespace RafaelGonzalez
 
         private void notasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MostrarPanel(new frmNotas());
+            cerrarfrm();
+            frmNotas f = new frmNotas();
+            f.MdiParent = this;
+            f.Show();
+            
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+        private void cerrarfrm()
+        {
+            frmEstudiantes fes = new frmEstudiantes();
+            fes.Close();
+            frmNotas fno = new frmNotas();
+            fno.Close();
+            frmMaterias fma = new frmMaterias();
+            fma.Close();
         }
     }
 }

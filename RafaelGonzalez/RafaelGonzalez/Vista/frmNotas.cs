@@ -24,15 +24,23 @@ namespace RafaelGonzalez.Vista
         DialogResult result;
         public void cargarDatos()
         {
+            dgvnotas.Rows.Clear();
             using (controlNotasEntities db = new controlNotasEntities())
             {
                 var lista = from n in db.notas
                             from e in db.estudiantes
                             from m in db.materias
                             where e.id_Estudiante == n.id_Estudiante
-                            where m.id_Materia == n.id_Materia
-                            select new {ID= n.id_Nota,Estudiante= e.nombre,Materia = m.nombre_Materia, Nota= n.nota };
-                dgvnotas.DataSource = lista.ToList();
+                            && m.id_Materia == n.id_Materia
+                            
+                            select new { 
+                                ID = n.id_Nota,Nombre= e.nombre,Materia= m.nombre_Materia, Nota= n.nota, Ids = m.id_Materia,IDs = e.id_Estudiante};
+                            foreach(var iterar in lista)
+                            {
+                                dgvnotas.Rows.Add(iterar.ID, iterar.Nombre, iterar.Materia, iterar.Nota, iterar.Ids,iterar.IDs);
+
+                            }
+             
 
             }
 
@@ -94,9 +102,11 @@ namespace RafaelGonzalez.Vista
                 db.notas.Add(n);
                 db.SaveChanges();
                 cargarDatos();
+                txtNota.Text = "";
 
             }
         }
+      
 
         public void desactivarEditar()
         {
@@ -113,16 +123,18 @@ namespace RafaelGonzalez.Vista
 
         }
 
-        private void dgvnotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvnotas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
 
             string nota = dgvnotas.CurrentRow.Cells[3].Value.ToString();
-
             txtNota.Text = nota;
+            string materia = dgvnotas.CurrentRow.Cells[4].Value.ToString();
+            mat = materia;
+            string est = dgvnotas.CurrentRow.Cells[5].Value.ToString();
+            estud = est;
             desactivarGuardar();
-            cmbEstudiantes.Enabled = false;
-            cmbMateria.Enabled = false;
+           
 
 
         }
@@ -138,10 +150,10 @@ namespace RafaelGonzalez.Vista
                     string id = dgvnotas.CurrentRow.Cells[0].Value.ToString();
                     int ID = int.Parse(id);
                     n = db.notas.Where(verificarId => verificarId.id_Nota == ID).First();
-                    //int es = int.Parse(estud);
-                    //n.id_Estudiante = es;
-                    //int mate = int.Parse(mat);
-                    //n.id_Materia = mate;
+                    int est = int.Parse(estud);
+                    n.id_Estudiante = est;
+                    int mate = int.Parse(mat);
+                    n.id_Materia = mate;
                     string nota = txtNota.Text;
                     double N = double.Parse(nota);
                     n.nota = N;
@@ -192,5 +204,6 @@ namespace RafaelGonzalez.Vista
             }
         }
 
+        
     }
 }

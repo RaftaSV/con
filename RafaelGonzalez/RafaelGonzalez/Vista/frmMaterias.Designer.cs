@@ -115,6 +115,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMaterias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMaterias";
             this.Load += new System.EventHandler(this.frmMaterias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
