@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -65,7 +66,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(157, 37);
             this.btnEditar.TabIndex = 16;
-            this.btnEditar.Text = "Actualizar nota";
+            this.btnEditar.Text = "Actualizar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -145,7 +146,13 @@
             // 
             this.dgvnotas.AllowUserToAddRows = false;
             this.dgvnotas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
+            this.dgvnotas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvnotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvnotas.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvnotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvnotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -154,6 +161,7 @@
             this.Nota,
             this.IDM,
             this.IDE});
+            this.dgvnotas.GridColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvnotas.Location = new System.Drawing.Point(2, 173);
             this.dgvnotas.Name = "dgvnotas";
             this.dgvnotas.ReadOnly = true;
